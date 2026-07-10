@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { Mail } from 'lucide-react';
+import { withBasePath } from '@/lib/publicPath';
 
 const CONTACT_EMAIL = 'jscodingquestions@gmail.com';
 
@@ -15,7 +16,7 @@ export default function Footer() {
                     <div className="flex items-center gap-2">
                         <div className="bg-[#222] p-1.5 rounded-lg border border-[#333]">
                             <Image
-                                src="/logo.png"
+                                src={withBasePath('/logo.png')}
                                 alt="JS Coding Questions Logo"
                                 width={16}
                                 height={16}

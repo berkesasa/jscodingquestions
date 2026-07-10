@@ -2,6 +2,7 @@
 
 import CodeBlock from './CodeBlock';
 import Image from 'next/image';
+import { withBasePath } from '@/lib/publicPath';
 
 export default function ContentRenderer({ sections, fallbackContent, renderInteractive }) {
   const renderTextWithImages = (text) => {
@@ -48,7 +49,7 @@ export default function ContentRenderer({ sections, fallbackContent, renderInter
           <div key={index} className="my-6 flex justify-center">
             <div className="relative max-w-full">
               <Image
-                src={part.src}
+                src={withBasePath(part.src)}
                 alt={part.alt || 'Image'}
                 width={800}
                 height={400}
@@ -96,7 +97,7 @@ export default function ContentRenderer({ sections, fallbackContent, renderInter
               <div key={index} className="my-6 flex justify-center">
                 <div className="relative max-w-full">
                   <Image
-                    src={section.content.src || section.content}
+                    src={withBasePath(section.content.src || section.content)}
                     alt={section.content.alt || 'Image'}
                     width={800}
                     height={400}

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
+import { withBasePath } from '@/lib/publicPath';
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,7 +15,7 @@ export default function Navbar() {
                 <Link href="/" className="flex items-center gap-3 group">
                     <div className="">
                         <Image
-                            src="/logo.png"
+                            src={withBasePath('/logo.png')}
                             alt="JS Coding Questions Logo"
                             width={24}
                             height={24}

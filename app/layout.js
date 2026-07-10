@@ -6,6 +6,8 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -24,7 +26,7 @@ export const metadata = {
   title: "JavaScript Coding Questions - Prepare for Interviews",
   description: "Master JavaScript with our comprehensive collection of coding questions, exercises, and interview challenges.",
   icons: {
-    icon: '/favicon.svg',
+    icon: `${BASE_PATH}/favicon.svg`,
   },
   openGraph: {
     type: 'website',

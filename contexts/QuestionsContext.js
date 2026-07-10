@@ -3,6 +3,7 @@
 import { createContext, useContext, useState, useEffect, useCallback } from 'react';
 
 const QuestionsContext = createContext(null);
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 export function QuestionsProvider({ children }) {
     const [data, setData] = useState(null);
@@ -18,7 +19,7 @@ export function QuestionsProvider({ children }) {
         try {
             setLoading(true);
             setError(null);
-            const response = await fetch('/questions.json');
+            const response = await fetch(`${BASE_PATH}/questions.json`);
 
             if (!response.ok) {
                 throw new Error('Failed to load questions');
